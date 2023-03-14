@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm run words:download && npm run words:filter && nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "words:download": "node download-words.js",
+    "words:filter": "node filter-words.js"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-fonts": "^3.0.0",
+    "nuxt": "^3.2.3",
+    "ofetch": "^1.0.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  }
+}
