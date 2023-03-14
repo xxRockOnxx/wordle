@@ -7,7 +7,21 @@ export default defineNuxtConfig({
         {
           charset: "utf-8",
           name: "description",
-          content: "Simple app that finds 5 letter words given the good letters, bad letters, and letter positions.",
+          content:
+            "Simple app that finds 5 letter words given the good letters, bad letters, and letter positions.",
+        },
+        {
+          name: "og:title",
+          content: "Wordle Word Finder",
+        },
+        {
+          name: "og:description",
+          content:
+            "Simple app that finds 5 letter words given the good letters, bad letters, and letter positions.",
+        },
+        {
+          name: "og:image",
+          content: process.env.URL + "/og-image.png",
         },
       ],
     },
