@@ -12,17 +12,17 @@ function onsubmit(possibleWords2: string[]) {
     style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);"
   >
     <div>
-      <h1 class="p-4 text-center text-white text-4xl font-bold leading-relaxed sm:text-6xl">
+      <h1 class="text-center text-white text-3xl font-bold leading-relaxed sm:text-4xl md:text-5xl lg:text-6xl">
         Wordle Word Finder
       </h1>
 
-      <div class="mt-8 space-y-4 sm:flex sm:items-center sm:justify-center sm:space-y-0 sm:space-x-10">
-        <div class="text-xl text-white font-bold sm:text-2xl sm:font-bold">
+      <div class="mt-4 space-y-2 sm:flex sm:items-center sm:justify-center sm:space-y-0 sm:space-x-10 sm:mt-8">
+        <div class="text-white font-bold sm:text-2xl sm:font-bold">
           Links:
         </div>
 
         <a
-          class="flex items-center text-white text-xl space-x-4 sm:text-2xl"
+          class="flex items-center text-white space-x-4 sm:text-2xl"
           href="https://github.com/xxRockOnxx/wordle"
         >
           <svg
@@ -37,7 +37,7 @@ function onsubmit(possibleWords2: string[]) {
         </a>
 
         <a
-          class="flex items-center space-x-4 text-white text-xl sm:text-2xl"
+          class="flex items-center space-x-4 text-white sm:text-2xl"
           href="https://github.com/dwyl/english-words"
         >
           <svg
@@ -53,7 +53,7 @@ function onsubmit(possibleWords2: string[]) {
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col items-center justify-center gap-8 sm:mt-20 lg:flex-row lg:items-stretch lg:mt-32">
+    <div class="mt-10 flex flex-col items-center justify-center gap-8 sm:mt-20 lg:flex-row lg:items-stretch">
       <WordleForm
         class="flex-shrink-0 w-full max-w-md"
         @submit="onsubmit"

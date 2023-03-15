@@ -124,10 +124,10 @@ function onsubmit() {
       @submit.prevent="onsubmit"
     >
       <label class="block">
-        <div>Good Letters</div>
+        <div class="text-sm">Good Letters</div>
         <input
           type="text"
-          class="mt-4 w-full rounded border px-4 py-2 uppercase font-mono"
+          class="mt-2 w-full rounded border px-4 py-2 uppercase font-mono"
           maxlength="5"
           :value="good"
           @input="onGoodInput"
@@ -135,52 +135,52 @@ function onsubmit() {
       </label>
 
       <label class="block">
-        <div>Bad Letters</div>
+        <div class="text-sm">Bad Letters</div>
         <input
           type="text"
-          class="mt-4 w-full rounded border px-4 py-2 uppercase font-mono"
+          class="mt-2 w-full rounded border px-4 py-2 uppercase font-mono"
           :value="bad"
           @input="onBadInput"
         >
       </label>
 
       <div>
-        <div>Puzzle</div>
+        <div class="text-sm">Puzzle</div>
         <div
           ref="puzzleInputs"
-          class="mt-4 grid grid-cols-5 divide-x border"
+          class="mt-2 grid grid-cols-5 divide-x border"
         >
           <input
             type="text"
-            class="px-4 py-2 uppercase"
+            class="text-center px-4 py-2 uppercase"
             maxlength="1"
             :value="letter1"
             @input="onLetterInput(0, $event)"
           >
           <input
             type="text"
-            class="px-4 py-2 uppercase"
+            class="text-center px-4 py-2 uppercase"
             maxlength="1"
             :value="letter2"
             @input="onLetterInput(1, $event)"
           >
           <input
             type="text"
-            class="px-4 py-2 uppercase"
+            class="text-center px-4 py-2 uppercase"
             maxlength="1"
             :value="letter3"
             @input="onLetterInput(2, $event)"
           >
           <input
             type="text"
-            class="px-4 py-2 uppercase"
+            class="text-center px-4 py-2 uppercase"
             maxlength="1"
             :value="letter4"
             @input="onLetterInput(3, $event)"
           >
           <input
             type="text"
-            class="px-4 py-2 uppercase"
+            class="text-center px-4 py-2 uppercase"
             maxlength="1"
             :value="letter5"
             @input="onLetterInput(4, $event)"
