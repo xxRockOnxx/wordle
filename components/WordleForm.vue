@@ -150,41 +150,19 @@ function onsubmit() {
           ref="puzzleInputs"
           class="mt-2 grid grid-cols-5 divide-x border"
         >
-          <input
-            type="text"
-            class="text-center px-4 py-2 uppercase"
-            maxlength="1"
-            :value="letter1"
-            @input="onLetterInput(0, $event)"
+          <label
+            v-for="i in 5"
+            :key="i"
           >
-          <input
-            type="text"
-            class="text-center px-4 py-2 uppercase"
-            maxlength="1"
-            :value="letter2"
-            @input="onLetterInput(1, $event)"
-          >
-          <input
-            type="text"
-            class="text-center px-4 py-2 uppercase"
-            maxlength="1"
-            :value="letter3"
-            @input="onLetterInput(2, $event)"
-          >
-          <input
-            type="text"
-            class="text-center px-4 py-2 uppercase"
-            maxlength="1"
-            :value="letter4"
-            @input="onLetterInput(3, $event)"
-          >
-          <input
-            type="text"
-            class="text-center px-4 py-2 uppercase"
-            maxlength="1"
-            :value="letter5"
-            @input="onLetterInput(4, $event)"
-          >
+            <span class="sr-only">Letter {{ i + 1 }}</span>
+            <input
+              type="text"
+              class="w-full text-center px-4 py-2 uppercase"
+              maxlength="1"
+              :value="letter1"
+              @input="onLetterInput(0, $event)"
+            >
+          </label>
         </div>
       </div>
 
