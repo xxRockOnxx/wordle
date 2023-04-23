@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.0",
+    "@types/node": "^18.16.0",
     "nuxt": "^3.4.2",
     "nuxt-simple-sitemap": "^2.4.11",
     "ofetch": "^1.0.1"
