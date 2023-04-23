@@ -46,6 +46,7 @@ export default defineNuxtConfig({
         families: {
           "Source+Code+Pro": [500],
         },
+        download: false,
       },
     ],
 
