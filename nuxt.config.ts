@@ -26,6 +26,10 @@ export default defineNuxtConfig({
           name: "og:image",
           content: process.env.URL + "/og-image.png",
         },
+        {
+          name: 'google-site-verification',
+          content: 'CZUVt9lZVrvrRQtotNlynFOmTvvrasfVi8FEKgYPb_s'
+        }
       ],
     },
   },
