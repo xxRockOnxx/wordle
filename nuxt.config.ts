@@ -48,5 +48,9 @@ export default defineNuxtConfig({
         },
       },
     ],
+
+    ['nuxt-simple-sitemap', {
+      siteUrl: process.env.URL
+    }]
   ],
 });
