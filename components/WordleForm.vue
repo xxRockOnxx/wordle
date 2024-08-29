@@ -8,15 +8,13 @@ const bad = ref('');
 
 const puzzleInputs = ref<HTMLDivElement | null>(null);
 
-const letter1 = ref('');
-const letter2 = ref('');
-const letter3 = ref('');
-const letter4 = ref('');
-const letter5 = ref('');
-
-const puzzle = computed(() => {
-  return [letter1.value, letter2.value, letter3.value, letter4.value, letter5.value]
-})
+const puzzle = ref([
+  "",
+  "",
+  "",
+  "",
+  "",
+])
 
 function hasUniqueLetters(word: string) {
   const letters = word.split('');
@@ -96,8 +94,9 @@ function onLetterInput(index: number, evt: Event) {
     value = '';
   }
 
-  [letter1, letter2, letter3, letter4, letter5][index].value = value;
+  puzzle.value[index] = value;
 
+  // Focus on the next input if the current input has a value.
   if (value) {
     (puzzleInputs.value!.children[Math.min(index + 1, 4)] as HTMLInputElement).focus()
   }
@@ -174,13 +173,13 @@ function onsubmit() {
             v-for="i in 5"
             :key="i"
           >
-            <span class="sr-only">Letter {{ i + 1 }}</span>
+            <span class="sr-only">Letter {{ i }}</span>
             <input
               type="text"
               class="w-full text-center px-4 py-2 uppercase"
               maxlength="1"
-              :value="letter1"
-              @input="onLetterInput(0, $event)"
+              :value="puzzle[i - 1]"
+              @input="onLetterInput(i - 1, $event)"
             >
           </label>
         </div>
