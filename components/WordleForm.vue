@@ -26,12 +26,21 @@ function hasUniqueLetters(word: string) {
   })
 }
 
+function isLetter(letter: string) {
+  return /^[a-z]*$/.test(letter.toLowerCase())
+}
+
 function doesNotIntersect(letters1: string[], letters2: string[]) {
   return letters1.every(letter => !letters2.includes(letter))
 }
 
 function onGoodInput(evt: Event) {
   const value = (evt.target as HTMLInputElement).value.trim().toLowerCase();
+
+  if (!isLetter(value)) {
+    (evt.target as HTMLInputElement).value = good.value;
+    return
+  }
 
   if (!hasUniqueLetters(value)) {
     (evt.target as HTMLInputElement).value = good.value;
@@ -52,6 +61,11 @@ function onGoodInput(evt: Event) {
 function onBadInput(evt: Event) {
   const value = (evt.target as HTMLInputElement).value;
 
+  if (!isLetter(value)) {
+    (evt.target as HTMLInputElement).value = bad.value;
+    return
+  }
+
   if (!hasUniqueLetters(value)) {
     (evt.target as HTMLInputElement).value = bad.value;
     return
@@ -71,6 +85,12 @@ function onBadInput(evt: Event) {
 function onLetterInput(index: number, evt: Event) {
   let value = (evt.target as HTMLInputElement).value.trim().toLowerCase();
 
+  if (!isLetter(value)) {
+    (evt.target as HTMLInputElement).value = '';
+    value = '';
+  }
+
+  // Reset the input value if it's empty or the value is in the bad letters.
   if (!value || bad.value && bad.value.includes(value)) {
     (evt.target as HTMLInputElement).value = '';
     value = '';
