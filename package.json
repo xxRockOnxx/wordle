@@ -1,4 +1,12 @@
 {
+  "devDependencies": {
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/sitemap": "6.0.0-beta.4",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@types/node": "^22.5.1",
+    "nuxt": "^3.13.0",
+    "ofetch": "^1.3.4"
+  },
   "private": true,
   "scripts": {
     "build": "npm run words:download && npm run words:filter && nuxt build",
@@ -8,17 +16,5 @@
     "postinstall": "nuxt prepare",
     "words:download": "node download-words.js",
     "words:filter": "node filter-words.js"
-  },
-  "devDependencies": {
-    "@nuxtjs/google-fonts": "^3.0.0",
-    "@types/node": "^18.16.0",
-    "nuxt": "^3.4.2",
-    "nuxt-simple-sitemap": "^2.4.11",
-    "ofetch": "^1.0.1"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.1"
   }
 }

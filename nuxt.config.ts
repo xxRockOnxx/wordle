@@ -34,28 +34,33 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/main.css"],
-
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
+  modules: [[
+    "@nuxtjs/google-fonts",
+    {
+      families: {
+        "Source+Code+Pro": [500],
+      },
+      download: false,
     },
+  ],
+    "@nuxtjs/sitemap",
+    "@nuxtjs/tailwindcss"
+  ],
+
+  site: {
+    name: "Wordle Word Finder",
+    url: process.env.URL,
   },
 
-  modules: [
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          "Source+Code+Pro": [500],
+  tailwindcss: {
+    config: {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ["Source Code Pro", "monospace"],
+          },
         },
-        download: false,
-      },
-    ],
-
-    ['nuxt-simple-sitemap', {
-      siteUrl: process.env.URL
-    }]
-  ],
+      }
+    }
+  }
 });
